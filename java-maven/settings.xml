@@ -1,0 +1,26 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <!--
+        NOTE: disable the default locations so that the jenkins container repository is used
+              for artifact storage and you don't pull every jar on every build.
+    -->
+    <!--<localRepository>/usr/share/maven/ref/repository</localRepository>-->
+
+    <!--
+        Use Jenkins provided credentials for Nexus push access
+        Your pom.xml distributionManagement element should use id: private.maven.repo
+    -->
+    <servers>
+        <server>
+            <id>private.maven.repo</id>
+            <username>${MAVEN_USER}</username>
+            <password>${MAVEN_PASSWORD}</password>
+        </server>
+    </servers>
+    <pluginGroups>
+        <!-- Allow clover to be called from simple name: clover -->
+        <pluginGroup>org.openclover</pluginGroup>
+    </pluginGroups>
+</settings>
