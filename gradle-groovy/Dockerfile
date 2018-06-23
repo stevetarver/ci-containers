@@ -1,4 +1,4 @@
-FROM gradle:4.4.1-jdk8-alpine
+FROM gradle:4.8.0-jdk8-alpine
 
 # Build system will provide arguments to identify source location/version
 ARG GIT_REPO_NAME='NOT SPECIFIED'
@@ -25,3 +25,4 @@ RUN apk --no-cache add --update git curl tar bash docker nodejs nodejs-npm py-pi
     pip install docker-compose && \
     npm install -g newman@3.9.3
 
+USER gradle
