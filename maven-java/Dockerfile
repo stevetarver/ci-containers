@@ -1,4 +1,4 @@
-FROM maven:3.5.2-jdk-8-alpine
+FROM maven:3.5.4-jdk-8-alpine
 
 # Build system will provide arguments to identify source location/version
 ARG GIT_REPO_NAME='NOT SPECIFIED'

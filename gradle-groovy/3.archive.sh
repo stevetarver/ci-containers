@@ -14,7 +14,6 @@ MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         exit 1
     fi
 
-    echo ${DOCKER_BUILD_IMAGE_NAMETAG}
     docker push ${DOCKER_BUILD_IMAGE_NAMETAG}
     docker logout ${DOCKER_REGISTRY_URL}
 )

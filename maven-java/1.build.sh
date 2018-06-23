@@ -3,7 +3,6 @@
 # Build docker image
 #
 MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 (
     # ensure we are at project root
     cd ${MY_DIR}
@@ -17,5 +16,4 @@ MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         --build-arg GIT_REPO_NAME=${GIT_REPO_NAME}     \
         -t ${DOCKER_BUILD_IMAGE_NAMETAG}               \
         .
-
 )

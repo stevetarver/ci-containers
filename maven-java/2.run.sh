@@ -9,5 +9,5 @@ MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     . config.sh
 
     echo "${ECHO_PREFIX} Bashing into '${CONTAINER_NAME}'"
-    docker run -it --rm --name ${CONTAINER_NAME} ${DOCKER_BUILD_IMAGE_NAMETAG} bash
+    docker run -it --rm ${DOCKER_BUILD_IMAGE_NAMETAG} bash
 )

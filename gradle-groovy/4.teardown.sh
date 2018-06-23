@@ -27,10 +27,10 @@ MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     fi
 
 
-    if [[ "$(docker images -q $IMAGE_NAME 2> /dev/null)" != "" ]]; then
-        echo "${ECHO_PREFIX} Removing '$IMAGE_NAME' image"
-        docker rmi $IMAGE_NAME
+    if [[ "$(docker images -q ${DOCKER_BUILD_IMAGE_NAMETAG} 2> /dev/null)" != "" ]]; then
+        echo "${ECHO_PREFIX} Removing '${DOCKER_BUILD_IMAGE_NAMETAG}' image"
+        docker rmi -f ${DOCKER_BUILD_IMAGE_NAMETAG}
     else
-        echo "${ECHO_PREFIX} '$IMAGE_NAME' image does not exist"
+        echo "${ECHO_PREFIX} '${DOCKER_BUILD_IMAGE_NAMETAG}' image does not exist"
     fi
 )

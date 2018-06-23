@@ -3,7 +3,6 @@
 # Stop running container and remove container/image
 #
 MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 (
     # ensure we are at project root
     cd ${MY_DIR}
@@ -30,7 +29,7 @@ MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
     if [[ "$(docker images -q ${DOCKER_BUILD_IMAGE_NAMETAG} 2> /dev/null)" != "" ]]; then
         echo "${ECHO_PREFIX} Removing '${DOCKER_BUILD_IMAGE_NAMETAG}' image"
-        docker rmi ${DOCKER_BUILD_IMAGE_NAMETAG}
+        docker rmi -f ${DOCKER_BUILD_IMAGE_NAMETAG}
     else
         echo "${ECHO_PREFIX} '${DOCKER_BUILD_IMAGE_NAMETAG}' image does not exist"
     fi
