@@ -9,11 +9,11 @@ MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     . config.sh
 
     echo "==> Attempting docker registry login"
-    docker login ${DOCKER_REGISTRY_URL}
+    docker login
     if [[ $? -ne 0 ]]; then
         exit 1
     fi
 
     docker push ${DOCKER_BUILD_IMAGE_NAMETAG}
-    docker logout ${DOCKER_REGISTRY_URL}
+    docker logout
 )
